@@ -6,6 +6,8 @@ class ObservableBuilder<T> {
   StreamController<T> _observable = StreamController();
   bool notSubscribed = true;
 
+  Stream<T> get stream => _observable.stream;
+
   void next(T value) {
     _observable.add(value);
   }
